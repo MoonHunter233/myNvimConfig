@@ -91,21 +91,5 @@ dashboard.setup({
       },
     },
     footer = "Happy coding with Neovim!",
-
-    -- 配置快捷键
-    shortcuts = {
-      ["f"] = "Find file", -- 按 f 查找文件
-      ["r"] = "Recently opened", -- 按 r 查看最近文件
-      ["t"] = "Open terminal", -- 按 t 打开终端
-      ["q"] = "Quit Neovim", -- 按 q 退出 Neovim
-    },
-  },
-
-  -- 配置快捷键菜单的按钮样式
-  buttons = {
-    { label = "Find file", key = "f", action = ":Telescope find_files<CR>" },
-    { label = "Recent files", key = "r", action = ":Telescope oldfiles<CR>" },
-    { label = "Open terminal", key = "t", action = ":term<CR>" },
-    { label = "Quit", key = "q", action = ":q<CR>" },
   },
 })
