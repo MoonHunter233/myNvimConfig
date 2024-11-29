@@ -5,6 +5,8 @@ require("core.keymaps")
 
 require("tool")
 
+require("nvide")
+
 -- 插件
 require("plugins.lualine")
 require("plugins.nvim-tree")
