@@ -81,6 +81,8 @@ return require("packer").startup(function(use)
 
   use("nvim-tree/nvim-web-devicons")
 
+  use("mg979/vim-visual-multi")
+
   if packer_bootstrap then
     require("packer").sync()
   end
