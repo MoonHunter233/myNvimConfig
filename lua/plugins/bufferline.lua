@@ -13,5 +13,8 @@ require("bufferline").setup({
         text_align = "left",
       },
     },
+    show_tab_indicators = true, -- 启用标签指示器
+    tab_size = 18, -- 设置标签宽度
+    separator_style = "slant", -- 分隔符样式
   },
 })
