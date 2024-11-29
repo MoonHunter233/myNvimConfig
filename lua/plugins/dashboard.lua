@@ -56,23 +56,38 @@ dashboard.setup({
     -- },
     center = {
       {
-        icon = " ",
+        icon = " ",
         icon_hl = "Title",
-        desc = "Find File           ",
+        desc = "Find All File           ",
         desc_hl = "String",
         key = "Telescope",
         keymap = "SPC f f",
         key_hl = "Number",
         key_format = " %s", -- remove default surrounding `[]`
-        action = "lua print(2)",
+        action = "lua print('qwq')",
       },
       {
+        icon = " ",
+        icon_hl = "Title",
+        desc = "Find Recent File           ",
+        desc_hl = "String",
+        key = "Telescope",
+        keymap = "SPC f r",
+        key_hl = "Number",
+        key_format = " %s", -- remove default surrounding `[]`
+        action = "lua print('qwq')",
+      },
+
+      {
         icon = " ",
+        icon_hl = "Title",
         desc = "File Manager",
+        desc_hl = "String",
         key = "Yazi",
         keymap = "SPC r a",
+        key_hl = "Number",
         key_format = " %s", -- remove default surrounding `[]`
-        action = "lua print(3)",
+        action = "lua print('qwq')",
       },
     },
     footer = "Happy coding with Neovim!",
