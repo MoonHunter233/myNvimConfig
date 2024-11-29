@@ -1,0 +1,10 @@
+# 忽略临时文件和缓存
+*.swp
+*.bak
+*.undo
+*.native
+**/node_modules
+**/.cache
+
+# 忽略 Packer 插件缓存
+packer_compiled.lua
