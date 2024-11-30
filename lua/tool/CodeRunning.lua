@@ -52,22 +52,22 @@ local function Run(full)
   elseif filetype == "rust" then
     RunWin(string.format('rustc "%s" -o "%s" && ./"%s" && rm -rf "%s"', filename, runfile, runfile, runfile), full)
   elseif filetype == "python" then
-    RunWin("term python3 " .. filename, full)
+    RunWin("python3 " .. filename, full)
   elseif filetype == "lua" then
-    RunWin("term luajit " .. filename, full)
+    RunWin("luajit " .. filename, full)
   elseif filetype == "sh" then
-    RunWin("term bash " .. filename, full)
+    RunWin("bash " .. filename, full)
   elseif filetype == "markdown" then
     require("tool.MdPreview").MarkdownPreview()
   elseif filetype == "html" then
     vim.cmd([[
       tabe
-      execute 'term live-server --browser=' . g:browser
+      execute 'live-server --browser=' . g:browser
       tabclose
     ]])
     feedkeys("<ESC>", "n")
   else
-    RunWin("echo " .. filetype, full)
+    RunWin(string.format('echo "cannot run this filetype: %s"', filetype), full)
   end
 end
 

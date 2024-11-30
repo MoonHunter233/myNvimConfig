@@ -13,7 +13,7 @@ end
 
 --- CodeRunning
 api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c", "cpp", "python", "lua", "markdown", "sh", "html" },
+  -- pattern = { "c", "cpp", "rust", "python", "lua", "markdown", "sh", "html" },
   callback = function()
     vim.keymap.set("n", "<F5>", function()
       require("tool.CodeRunning").running(false)
