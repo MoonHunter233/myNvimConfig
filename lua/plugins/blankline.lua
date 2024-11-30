@@ -21,4 +21,16 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
   vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
 end)
 
-require("ibl").setup({ indent = { highlight = highlight } })
+require("ibl").setup({
+  indent = { highlight = highlight },
+  exclude = {
+    filetypes = {
+      "dashboard", -- 排除 Dashboard
+      -- "alpha", -- 排除 alpha
+      -- "help", -- 排除 help
+      -- "startify", -- 排除 startify
+      -- "packer", -- 排除 packer
+      -- "NvimTree", -- 排除 NvimTree
+    },
+  },
+})
