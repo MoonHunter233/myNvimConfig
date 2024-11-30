@@ -25,14 +25,14 @@ api.nvim_create_autocmd({ "FileType" }, {
 })
 
 --- Image Paste
-api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.md",
-  callback = function()
-    vim.keymap.set("n", "<leader>P", function()
-      require("tool.Image").paste()
-    end)
-  end,
-})
+-- api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+--   pattern = "*.md",
+--   callback = function()
+--     vim.keymap.set("n", "<leader>P", function()
+--       require("tool.Image").paste()
+--     end)
+--   end,
+-- })
 
 api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   callback = function()
@@ -42,31 +42,31 @@ api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end, { nargs = 0 })
 
     --- ImSwitch
-    api.nvim_create_autocmd("InsertLeave", {
-      callback = function()
-        require("tool.ImSwitch").En()
-      end,
-    })
-    api.nvim_create_autocmd("InsertEnter", {
-      callback = function()
-        local buf_info = vim.fn.expand("%:e")
-        if ele_in_table(buf_info, { "md", "txt" }) then
-          if require("tool.ImSwitch").filetype_checke() then
-            require("tool.ImSwitch").Zh()
-          end
-        else
-          require("tool.ImSwitch").Zh_Insert()
-        end
-      end,
-    })
-    api.nvim_create_autocmd("TextChangedI", {
-      callback = function()
-        if (vim.bo.filetype == "python" or vim.bo.filetype == "sh") and vim.fn.line(".") == 1 then
-          return
-        end
-        require("tool.ImSwitch").Zh_Text()
-      end,
-    })
+    -- api.nvim_create_autocmd("InsertLeave", {
+    --   callback = function()
+    --     require("tool.ImSwitch").En()
+    --   end,
+    -- })
+    -- api.nvim_create_autocmd("InsertEnter", {
+    --   callback = function()
+    --     local buf_info = vim.fn.expand("%:e")
+    --     if ele_in_table(buf_info, { "md", "txt" }) then
+    --       if require("tool.ImSwitch").filetype_checke() then
+    --         require("tool.ImSwitch").Zh()
+    --       end
+    --     else
+    --       require("tool.ImSwitch").Zh_Insert()
+    --     end
+    --   end,
+    -- })
+    -- api.nvim_create_autocmd("TextChangedI", {
+    --   callback = function()
+    --     if (vim.bo.filetype == "python" or vim.bo.filetype == "sh") and vim.fn.line(".") == 1 then
+    --       return
+    --     end
+    --     require("tool.ImSwitch").Zh_Text()
+    --   end,
+    -- })
 
     --- GetNode
     vim.keymap.set("n", "<leader>N", function()
@@ -101,9 +101,9 @@ api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end, { silent = true })
 
     --- TabToSpace
-    vim.keymap.set("n", "<leader>ts", function()
-      require("tool.TabToSpace").TabToSpace()
-    end, { silent = true })
+    -- vim.keymap.set("n", "<leader>ts", function()
+    --   require("tool.TabToSpace").TabToSpace()
+    -- end, { silent = true })
 
     --- Wildfire
     vim.keymap.set({ "n", "v" }, "<cr>", function()
