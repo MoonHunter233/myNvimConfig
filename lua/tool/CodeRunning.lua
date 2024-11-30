@@ -71,6 +71,12 @@ local function Run(full)
   end
 end
 
+-- add a new function to use onefetch in a floating window
+local function Term(full)
+  RunWin("onefetch", full)
+end
+
 return {
   running = Run,
+  terminal = Term,
 }

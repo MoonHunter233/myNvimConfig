@@ -24,6 +24,10 @@ api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+vim.keymap.set("n", "<leader>one", function()
+  require("tool.CodeRunning").terminal(true)
+end, { silent = true })
+
 --- Image Paste
 -- api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 --   pattern = "*.md",
