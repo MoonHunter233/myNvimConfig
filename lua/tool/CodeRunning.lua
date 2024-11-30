@@ -34,11 +34,14 @@ local function Run(full)
   local runfile = vim.fn.expand("%<")
   vim.cmd("silent! lcd %:p:h")
   if filetype == "c" then
-    RunWin(string.format('gcc "%s" -o "%s" && ./"%s" && rm -f "%s"', filename, runfile, runfile, runfile), full)
+    RunWin(
+      string.format('clang "%s" -O2 -g -Wall -o "%s" && ./"%s" && rm -f "%s"', filename, runfile, runfile, runfile),
+      full
+    )
   elseif filetype == "cpp" then
     RunWin(
       string.format(
-        'term g++ "%s" -std=c++17 -O2 -g -Wall -o "%s" && ./"%s" && rm -rf "%s"',
+        'clang++ "%s" -std=c++23 -O2 -g -Wall -o "%s" && ./"%s" && rm -rf "%s"',
         filename,
         runfile,
         runfile,
@@ -46,6 +49,8 @@ local function Run(full)
       ),
       full
     )
+  elseif filetype == "rust" then
+    RunWin(string.format('rustc "%s" -o "%s" && ./"%s" && rm -rf "%s"', filename, runfile, runfile, runfile), full)
   elseif filetype == "python" then
     RunWin("term python3 " .. filename, full)
   elseif filetype == "lua" then
@@ -61,6 +66,8 @@ local function Run(full)
       tabclose
     ]])
     feedkeys("<ESC>", "n")
+  else
+    RunWin("echo " .. filetype, full)
   end
 end
 
