@@ -34,6 +34,12 @@ keymap.set("n", "<S-L>", ":bnext<CR>")
 keymap.set("n", "<S-H>", ":bprevious<CR>")
 keymap.set("n", "<S-W>", ":bdelete<CR>")
 
+keymap.set("n", "<leader>kt", ":!kitty --directory=$(pwd) &<CR> | <CR>")
+
+-- ---------- 命令行模式 ---------- ---
+-- 在命令行模式下使用 Ctrl+V 粘贴
+keymap.set({ "c", "i" }, "<C-v>", "<C-r>+")
+
 -- ---------- 插件 ---------- ---
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
