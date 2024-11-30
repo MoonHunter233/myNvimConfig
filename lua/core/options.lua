@@ -11,7 +11,10 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- 防止包裹
-opt.wrap = false
+opt.wrap = true
+
+-- 在单词边界换行
+opt.linebreak = true
 
 -- 光标行
 opt.cursorline = true
