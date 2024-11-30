@@ -7,6 +7,8 @@ require("tool")
 
 require("nvide")
 
+require("fontStyle")
+
 -- 插件
 require("plugins.lualine")
 require("plugins.nvim-tree")
@@ -21,6 +23,7 @@ require("plugins.telescope")
 require("plugins.formatter")
 require("plugins.smooth-cursor")
 require("plugins.dashboard")
+require("plugins.blankline")
 
 _G.kind_icons = {
   Text = " 󰉿 ",

@@ -9,4 +9,9 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true, -- 显示所有隐藏文件
   },
+  renderer = {
+    indent_markers = {
+      enable = true, -- 启用层级竖线
+    },
+  },
 })

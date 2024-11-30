@@ -78,11 +78,13 @@ return require("packer").startup(function(use)
     },
   })
 
-  use("glepnir/dashboard-nvim") --nvim dashboard
+  use("glepnir/dashboard-nvim") -- nvim dashboard
 
   use("nvim-tree/nvim-web-devicons")
 
-  use("mg979/vim-visual-multi")
+  use("mg979/vim-visual-multi") -- 选中多个
+
+  use("lukas-reineke/indent-blankline.nvim") -- 括号竖线
 
   if packer_bootstrap then
     require("packer").sync()
