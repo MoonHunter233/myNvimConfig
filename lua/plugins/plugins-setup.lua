@@ -25,6 +25,7 @@ vim.cmd([[
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use("folke/tokyonight.nvim") -- 主题
+  use("projekt0n/github-nvim-theme") -- gtihub theme
   use({ "catppuccin/nvim", as = "catppuccin" }) -- theme
   use({
     "nvim-lualine/lualine.nvim", -- 状态栏
