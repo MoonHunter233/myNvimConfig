@@ -24,6 +24,8 @@ require("plugins.formatter")
 require("plugins.smooth-cursor")
 require("plugins.dashboard")
 require("plugins.blankline")
+require("plugins.notification")
+require("plugins.leetcode")
 
 _G.kind_icons = {
   Text = " 󰉿 ",

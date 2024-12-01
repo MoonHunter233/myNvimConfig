@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
     "neovim/nvim-lspconfig",
+    "jay-babu/mason-nvim-dap.nvim",
   })
   -- 自动补全
   use("hrsh7th/nvim-cmp")
@@ -85,6 +86,18 @@ return require("packer").startup(function(use)
   use("mg979/vim-visual-multi") -- 选中多个
 
   use("lukas-reineke/indent-blankline.nvim") -- 括号竖线
+
+  use({
+    "mfussenegger/nvim-dap", -- dap调试
+    "rcarriga/nvim-dap-ui",
+    "theHamsta/nvim-dap-virtual-text",
+  })
+
+  use("rcarriga/nvim-notify") -- notification
+
+  use("MunifTanjim/nui.nvim") -- nui
+
+  use("kawre/leetcode.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

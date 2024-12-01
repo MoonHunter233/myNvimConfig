@@ -2,6 +2,8 @@ local function feedkeys(keys, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, true, true), mode, true)
 end
 
+local notify = require("notify")
+
 local function RunWin(opt, full)
   local Win = require("tool.util.FloatWin")
   Win:Create({
@@ -28,6 +30,7 @@ local function RunWin(opt, full)
 end
 
 local function Run(full)
+  notify("genshin start >>>", "info", { title = "Genshin" })
   vim.cmd("w")
   local filetype = vim.bo.filetype
   local filename = vim.fn.expand("%")

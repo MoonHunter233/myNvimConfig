@@ -5,6 +5,9 @@ local icons = require("plugins.icons")
 local builtin = require("telescope.builtin")
 local Yazi = require("tool.Yazi").Yazi
 
+local notify = require("notify")
+notify("Neovim Start", "info", { title = "welcome", timeout = 500 })
+
 dashboard.setup({
   -- 设置主题
   theme = "doom", -- 你可以尝试 'doom', 'hyper', 'alpha', 'gruvbox' 等主题
@@ -55,6 +58,18 @@ dashboard.setup({
     --   ["Sunday"] = "Recharge for the week ahead!",
     -- },
     center = {
+      {
+        icon = "💻 ",
+        icon_hl = "Title",
+        desc = "LeetCode           ",
+        desc_hl = "String",
+        key = "ll",
+        keymap = ":Leet",
+        key_hl = "Number",
+        key_format = " %s", -- remove default surrounding `[]`
+        action = "Leet",
+      },
+
       {
         icon = "📁 ",
         icon_hl = "Title",

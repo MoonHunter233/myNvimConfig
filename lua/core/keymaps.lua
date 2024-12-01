@@ -50,3 +50,11 @@ keymap.set("n", "<leader>fw", ":FormatWrite<CR>")
 
 -- lazygit
 keymap.set("n", "<leader>lg", ":LazyGit<CR>")
+
+-- notify-telescope
+keymap.set("n", "<leader>fn", ":Telescope notify<CR>")
+keymap.set("n", "<leader>nn", ":Notifications<CR>")
+
+-- leetcode
+keymap.set("n", "<leader>ll", ":Leet<CR>")
+keymap.set("n", "<leader>lr", ":run<CR>")
