@@ -20,7 +20,7 @@ opt.linebreak = true
 opt.cursorline = true
 
 -- 启用鼠标
-opt.mouse:append("a")
+opt.mouse = ""
 
 -- 系统剪贴板
 opt.clipboard:append("unnamedplus")
