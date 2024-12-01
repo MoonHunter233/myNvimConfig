@@ -97,7 +97,17 @@ return require("packer").startup(function(use)
 
   use("MunifTanjim/nui.nvim") -- nui
 
-  use("kawre/leetcode.nvim")
+  use("kawre/leetcode.nvim") -- leetcode
+
+  use("tadmccorkle/markdown.nvim") -- markdown hotkey
+
+  use({
+    "MeanderingProgrammer/render-markdown.nvim",
+    after = { "nvim-treesitter" },
+    requires = { "echasnovski/mini.nvim", opt = true }, -- if you use the mini.nvim suite
+    -- requires = { 'echasnovski/mini.icons', opt = true }, -- if you use standalone mini plugins
+    -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+  })
 
   if packer_bootstrap then
     require("packer").sync()
