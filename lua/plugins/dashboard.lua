@@ -2,6 +2,9 @@ local dashboard = require("dashboard")
 
 local icons = require("plugins.icons")
 
+local builtin = require("telescope.builtin")
+local Yazi = require("tool.Yazi").Yazi
+
 dashboard.setup({
   -- 设置主题
   theme = "doom", -- 你可以尝试 'doom', 'hyper', 'alpha', 'gruvbox' 等主题
@@ -9,9 +12,7 @@ dashboard.setup({
   -- 配置欢迎信息
   config = {
     header = {
-      "",
       "Welcome to Neovim!",
-      "",
       "",
       "⣿⣿⣿⣿⣿⣿⣻⣽⡿⣿⣎⠙⣿⣞⣷⡌⢻⣟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⡄⠹⣿⣿⡆⠻⣿⣟⣯⡿⣽⡿⣿⣿⣿⣿⣽⡷⣯⣿⣿⣿",
       "⣿⣿⣿⣿⣿⣿⣟⣷⣿⣿⣿⡀⠹⣟⣾⣟⣆⠹⣯⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢠⡘⣿⣿⡄⠉⢿⣿⣽⡷⣿⣻⣿⣿⣿⣿⡝⣷⣯⢿⣿",
@@ -43,7 +44,6 @@ dashboard.setup({
       "⣿⣿⣿⣿⣦⡙⣿⣆⢻⡌⢿⣶⢤⣉⣙⣿⣷⡀⠙⠽⠷⠄⠹⣿⣟⣿⣆⢙⣋⣤⣤⣤⣄⣀⢀⢀⢀⢀⣾⣿⣟⡷⣯⡿⢃⣼⣿⣿⣿⠇⣼⡟⣡⣿⣿⣿⢀⡿",
       "",
       "",
-      "",
     },
     -- week_head = {
     --   ["Monday"] = "Start your week with power!",
@@ -56,38 +56,51 @@ dashboard.setup({
     -- },
     center = {
       {
-        icon = " ",
+        icon = "📁 ",
         icon_hl = "Title",
         desc = "Find All File           ",
         desc_hl = "String",
-        key = "Telescope",
+        key = "ff",
         keymap = "SPC f f",
         key_hl = "Number",
         key_format = " %s", -- remove default surrounding `[]`
-        action = "lua print('qwq')",
+        action = builtin.find_files,
       },
       {
-        icon = " ",
+        icon = "📂 ",
         icon_hl = "Title",
         desc = "Find Recent File           ",
         desc_hl = "String",
-        key = "Telescope",
+        key = "fg",
         keymap = "SPC f r",
         key_hl = "Number",
         key_format = " %s", -- remove default surrounding `[]`
-        action = "lua print('qwq')",
+        action = builtin.live_grep,
       },
 
       {
-        icon = " ",
+        icon = "🦆 ",
         icon_hl = "Title",
         desc = "File Manager",
         desc_hl = "String",
-        key = "Yazi",
+        key = "yz",
         keymap = "SPC r a",
         key_hl = "Number",
         key_format = " %s", -- remove default surrounding `[]`
-        action = "lua print('qwq')",
+        action = function()
+          Yazi("edit")
+        end,
+      },
+      {
+        icon = "👻 ",
+        icon_hl = "Title",
+        desc = "QUIT",
+        desc_hl = "String",
+        key = "qq",
+        keymap = "SPC r a",
+        key_hl = "Number",
+        key_format = " %s", -- remove default surrounding `[]`
+        action = "q",
       },
     },
     footer = "Happy coding with Neovim!",
