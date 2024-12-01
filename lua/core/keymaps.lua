@@ -57,4 +57,16 @@ keymap.set("n", "<leader>nn", ":Notifications<CR>")
 
 -- leetcode
 keymap.set("n", "<leader>ll", ":Leet<CR>")
-keymap.set("n", "<leader>lr", ":run<CR>")
+keymap.set("n", "<leader>lr", ":Leet run<CR>")
+keymap.set("n", "<leader>lc", ":Leet submit<CR>")
+keymap.set("n", "<leader>lC", ":Leet last_submit<CR>")
+keymap.set("n", "<leader>lL", ":Leet lang<CR>")
+keymap.set("n", "<leader>li", ":Leet info<CR>")
+keymap.set("n", "<leader>lo", ":Leet open<CR>")
+keymap.set("n", "<leader>lt", ":Leet tabs<CR>")
+keymap.set("n", "<leader>lT", ":Leet list<CR>")
+keymap.set("n", "<leader>lk", ":Leet console<CR>")
+
+-- markdown
+keymap.set("n", "<leader>md", ":RenderMarkdown<CR>")
+keymap.set("n", "<leader>mD", ":RenderMarkdown disable<CR>")
