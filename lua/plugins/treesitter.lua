@@ -17,6 +17,9 @@ require("nvim-treesitter.configs").setup({
     "markdown",
     "markdown_inline",
     "ini",
+    "yaml",
+    "toml",
+    "editorconfig",
   }, -- one of "all" or a list of languages
 
   highlight = { enable = true },
