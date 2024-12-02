@@ -56,11 +56,10 @@ keymap.set("n", "<leader>fn", ":Telescope notify<CR>")
 keymap.set("n", "<leader>nn", ":Notifications<CR>")
 
 -- leetcode
-keymap.set("n", "<leader>ll", ":Leet<CR>")
 keymap.set("n", "<leader>lr", ":Leet run<CR>")
 keymap.set("n", "<leader>lc", ":Leet submit<CR>")
 keymap.set("n", "<leader>lC", ":Leet last_submit<CR>")
-keymap.set("n", "<leader>lL", ":Leet lang<CR>")
+keymap.set("n", "<leader>ll", ":Leet lang<CR>")
 keymap.set("n", "<leader>li", ":Leet info<CR>")
 keymap.set("n", "<leader>lo", ":Leet open<CR>")
 keymap.set("n", "<leader>lt", ":Leet tabs<CR>")
