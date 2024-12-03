@@ -82,7 +82,7 @@ dashboard.setup({
         icon_hl = "Title",
         desc = "Find Recent File           ",
         desc_hl = "String",
-        key = "fg",
+        key = "fr",
         keymap = "SPC f r",
         key_hl = "Number",
         key_format = " %s", -- remove default surrounding `[]`
