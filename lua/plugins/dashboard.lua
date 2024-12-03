@@ -108,7 +108,7 @@ dashboard.setup({
         desc = "QUIT",
         desc_hl = "String",
         key = "qq",
-        keymap = "SPC r a",
+        keymap = ":q",
         key_hl = "Number",
         key_format = " %s", -- remove default surrounding `[]`
         action = "q",
