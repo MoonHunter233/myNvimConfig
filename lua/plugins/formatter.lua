@@ -63,6 +63,16 @@ require("formatter").setup({
       end,
     },
 
+    rust = {
+      function()
+        return {
+          exe = "rustfmt",
+          args = {}, -- 添加你需要的参数
+          stdin = true, -- 从标准输入获取内容
+        }
+      end,
+    },
+
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {

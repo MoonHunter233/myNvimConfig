@@ -97,6 +97,8 @@ return require("packer").startup(function(use)
 
   use("MunifTanjim/nui.nvim") -- nui
 
+  use("folke/noice.nvim") -- noice require nui
+
   use("kawre/leetcode.nvim") -- leetcode
 
   use("tadmccorkle/markdown.nvim") -- markdown hotkey
@@ -107,6 +109,11 @@ return require("packer").startup(function(use)
     requires = { "echasnovski/mini.nvim", opt = true }, -- if you use the mini.nvim suite
     -- requires = { 'echasnovski/mini.icons', opt = true }, -- if you use standalone mini plugins
     -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+  })
+
+  use({
+    "akinsho/toggleterm.nvim", -- float terminal
+    tag = "*",
   })
 
   if packer_bootstrap then

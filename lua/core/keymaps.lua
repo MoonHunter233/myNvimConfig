@@ -15,8 +15,13 @@ keymap.set("v", "<leader>b", "%") -- match brackest
 
 -- ---------- 正常模式 ---------- ---
 -- 窗口
-keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口
-keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
+keymap.set("n", "<leader>vv", "<C-w>v") -- 水平新增窗口
+keymap.set("n", "<leader>vh", "<C-w>s") -- 垂直新增窗口
+keymap.set("n", "<leader>vc", "<C-w>c") -- close window
+keymap.set("n", "<C-S-j>", "<C-w>+") -- left top / right bottom reverse
+keymap.set("n", "<C-S-k>", "<C-w>-")
+keymap.set("n", "<C-S-h>", "<C-w><")
+keymap.set("n", "<C-S-l>", "<C-w>>")
 
 keymap.set("n", "<A-h>", "0") --jump to line head
 keymap.set("n", "<A-l>", "$") --jump to line end
@@ -69,3 +74,8 @@ keymap.set("n", "<leader>lk", ":Leet console<CR>")
 -- markdown
 keymap.set("n", "<leader>md", ":RenderMarkdown<CR>")
 keymap.set("n", "<leader>mD", ":RenderMarkdown disable<CR>")
+
+-- toggleterm
+keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>")
+keymap.set("n", "<leader>tr", ":ToggleTerm direction=vertical<CR>")
+keymap.set("n", "<leader>ty", ":ToggleTerm direction=horizontal<CR>")
