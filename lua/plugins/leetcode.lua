@@ -36,7 +36,7 @@ require("leetcode").setup({
       after = "int main() {}",
     },
     ["c"] = {
-      before = { "#include <stdio.h>", "#include <stdlib.h>" },
+      before = { "#include <stdio.h>", "#include <stdlib.h>", "#include <stdbool.h>" },
       after = "int main() {}",
     },
     ["java"] = {
