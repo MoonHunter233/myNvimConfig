@@ -74,3 +74,8 @@ keymap.set("n", "<leader>lk", ":Leet console<CR>")
 -- markdown
 keymap.set("n", "<leader>md", ":RenderMarkdown<CR>")
 keymap.set("n", "<leader>mD", ":RenderMarkdown disable<CR>")
+
+-- toggleterm
+keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>")
+keymap.set("n", "<leader>tr", ":ToggleTerm direction=vertical<CR>")
+keymap.set("n", "<leader>ty", ":ToggleTerm direction=horizontal<CR>")

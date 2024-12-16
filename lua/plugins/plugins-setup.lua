@@ -109,6 +109,11 @@ return require("packer").startup(function(use)
     -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
   })
 
+  use({
+    "akinsho/toggleterm.nvim", -- float terminal
+    tag = "*",
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
