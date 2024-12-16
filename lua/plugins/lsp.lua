@@ -31,3 +31,11 @@ lspconfig.clangd.setup({
   cmd = { "/usr/bin/clangd" },
   capabilities = capabilities,
 })
+
+lspconfig.ast_grep.setup({
+  capabilities = capabilities,
+})
+
+lspconfig.rust_analyzer.setup({
+  capabilities = capabilities,
+})
