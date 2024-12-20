@@ -97,6 +97,8 @@ return require("packer").startup(function(use)
 
   use("MunifTanjim/nui.nvim") -- nui
 
+  use("folke/noice.nvim") -- noice require nui
+
   use("kawre/leetcode.nvim") -- leetcode
 
   use("tadmccorkle/markdown.nvim") -- markdown hotkey
