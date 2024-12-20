@@ -91,6 +91,7 @@ return require("packer").startup(function(use)
     "mfussenegger/nvim-dap", -- dap调试
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
+    "nvim-neotest/nvim-nio",
   })
 
   use("rcarriga/nvim-notify") -- notification
