@@ -15,7 +15,7 @@ end
 api.nvim_create_autocmd({ "FileType" }, {
   -- pattern = { "c", "cpp", "rust", "python", "lua", "markdown", "sh", "html" },
   callback = function()
-    vim.keymap.set("n", "<F5>", function()
+    vim.keymap.set("n", "<leader>re", function()
       require("tool.CodeRunning").running(false)
     end, { silent = true })
     vim.keymap.set("n", "<leader>rr", function()

@@ -28,6 +28,7 @@ require("plugins.notification")
 require("plugins.noice")
 require("plugins.leetcode")
 require("plugins.toggleterm")
+require("plugins.dap")
 
 _G.kind_icons = {
   Text = " 󰉿 ",
