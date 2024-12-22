@@ -1,5 +1,10 @@
 -- 配置 nvim-dap
 local dap = require("dap")
+
+vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "Error", linehl = "", numhl = "WarningMsg" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "🔵", texthl = "Function", linehl = "", numhl = "Normal" })
+vim.fn.sign_define("DapLogPoint", { text = "📝", texthl = "String", linehl = "", numhl = "Normal" })
+
 require("mason-nvim-dap").setup({
   -- 自动安装支持的调试适配器
   automatic_setup = true,
