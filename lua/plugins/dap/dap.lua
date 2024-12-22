@@ -21,6 +21,25 @@ require("mason-nvim-dap").setup({
   },
 })
 
+-- cpp
+dap.configurations.cpp = {
+  {
+    name = "Launch File",
+    type = "codelldb", -- 调试适配器类型
+    request = "launch",
+    program = function()
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+    end,
+    cwd = "${workspaceFolder}", -- 工作目录
+    stopOnEntry = false,
+    args = {}, -- 可选参数
+  },
+}
+
+-- 为 C 和 Rust 复用配置
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
+
 vim.keymap.set("n", "<F5>", dap.continue) -- 开始/继续调试
 vim.keymap.set("n", "<F10>", dap.step_over) -- 单步跳过
 vim.keymap.set("n", "<F11>", dap.step_into) -- 单步进入
