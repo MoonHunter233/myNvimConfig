@@ -117,6 +117,8 @@ return require("packer").startup(function(use)
     tag = "*",
   })
 
+  use("Pocco81/auto-save.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end

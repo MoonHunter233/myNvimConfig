@@ -1,4 +1,4 @@
-require("plugins.plugins-setup")
+require("plugins.packer")
 
 require("core.options")
 require("core.keymaps")
