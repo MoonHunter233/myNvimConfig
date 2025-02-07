@@ -13,6 +13,10 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "jdtls",
+    "ast_grep",
+    "jbtls",
+    "rust_analyzer",
+    "cmake",
   },
 })
 
