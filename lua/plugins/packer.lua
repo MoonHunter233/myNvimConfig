@@ -18,7 +18,7 @@ local packer_bootstrap = ensure_packer()
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+    autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -117,7 +117,7 @@ return require("packer").startup(function(use)
     tag = "*",
   })
 
-  use("Pocco81/auto-save.nvim")
+  -- use("Pocco81/auto-save.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

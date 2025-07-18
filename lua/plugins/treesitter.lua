@@ -21,7 +21,7 @@ require("nvim-treesitter.configs").setup({
     "toml",
     "editorconfig",
   }, -- one of "all" or a list of languages
-
+  -- ensure_installed = "all",
   highlight = { enable = true },
   indent = { enable = true },
 
