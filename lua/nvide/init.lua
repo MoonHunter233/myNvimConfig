@@ -1,6 +1,5 @@
 if vim.g.neovide then
-  vim.o.guifont = "Maple Mono NF CN:h14:b" -- text below applies for VimScript
-  vim.g.neovide_font_features = { "calt=0", "liga=0" }
+  vim.o.guifont = "Maple Mono NL NF CN:h14" -- text below applies for VimScript
   vim.o.linespace = 0 -- 字体行间距
 
   vim.g.neovide_scale_factor = 1.0
