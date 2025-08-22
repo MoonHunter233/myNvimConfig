@@ -39,7 +39,8 @@ return require("packer").startup(function(use)
   })
   use("christoomey/vim-tmux-navigator") -- 用ctl-hjkl来定位窗口
   use("nvim-treesitter/nvim-treesitter") -- 语法高亮
-  use("p00f/nvim-ts-rainbow") -- 配合treesitter，不同括号颜色区分
+  use("HiPhish/rainbow-delimiters.nvim")
+  -- use("p00f/nvim-ts-rainbow") -- 配合treesitter，不同括号颜色区分
   use({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
