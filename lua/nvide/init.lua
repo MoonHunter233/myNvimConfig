@@ -1,5 +1,5 @@
 if vim.g.neovide then
-  vim.o.guifont = "Maple Mono:h12:b" -- text below applies for VimScript
+  vim.o.guifont = "Maple Mono NF CN:h14:b" -- text below applies for VimScript
 
   vim.o.linespace = 0 -- 字体行间距
 
@@ -16,10 +16,10 @@ if vim.g.neovide then
   vim.g.neovide_padding_left = 0
 
   -- 窗口透明度模糊
-  vim.g.neovide_opacity = 1
+  vim.g.neovide_opacity = 0.9
   vim.g.neovide_window_blurred = true
-  vim.g.neovide_floating_blur_amount_x = 2.0
-  vim.g.neovide_floating_blur_amount_y = 2.0
+  vim.g.neovide_floating_blur_amount_x = 1.0
+  vim.g.neovide_floating_blur_amount_y = 1.0
 
   -- 浮动窗口的阴影
   vim.g.neovide_floating_shadow = false
