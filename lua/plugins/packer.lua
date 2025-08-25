@@ -93,6 +93,7 @@ return require("packer").startup(function(use)
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
     "nvim-neotest/nvim-nio",
+    "theHamsta/nvim-dap-virtual-text",
   })
 
   use("rcarriga/nvim-notify") -- notification
