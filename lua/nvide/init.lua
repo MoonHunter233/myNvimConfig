@@ -42,7 +42,7 @@ if vim.g.neovide then
   -- vim.g.neovide_underline_stroke_scale = 1.0
 
   -- fps
-  vim.g.neovide_refresh_rate = 60
+  vim.g.neovide_refresh_rate = 144
   vim.g.neovide_refresh_rate_idle = 5
 
   -- 强制重绘
@@ -74,7 +74,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_smooth_blink = true -- 光标平滑闪烁
 
   -- 粒子效果
-  vim.g.neovide_cursor_vfx_mode = "pixedust" -- "torpedo", "torpedo", "pixedust", "sonicboom", "ripple", "wireframe", ""
+  vim.g.neovide_cursor_vfx_mode = "" -- "torpedo", "torpedo", "pixedust", "sonicboom", "ripple", "wireframe", ""
   vim.g.neovide_cursor_vfx_opacity = 200.0 -- 透明度
   vim.g.neovide_cursor_vfx_particle_lifetime = 1.2 -- 生命周期（时长？）
   vim.g.neovide_cursor_vfx_particle_density = 7.0 -- 密度
