@@ -74,7 +74,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_smooth_blink = true -- 光标平滑闪烁
 
   -- 粒子效果
-  vim.g.neovide_cursor_vfx_mode = "ripple" -- "torpedo", "torpedo", "pixedust", "sonicboom", "ripple", "wireframe", ""
+  vim.g.neovide_cursor_vfx_mode = "pixedust" -- "torpedo", "torpedo", "pixedust", "sonicboom", "ripple", "wireframe", ""
   vim.g.neovide_cursor_vfx_opacity = 200.0 -- 透明度
   vim.g.neovide_cursor_vfx_particle_lifetime = 1.2 -- 生命周期（时长？）
   vim.g.neovide_cursor_vfx_particle_density = 7.0 -- 密度
