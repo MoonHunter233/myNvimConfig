@@ -8,8 +8,8 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-keymap.set("v", "<A-h>", "0") --jump to line head
-keymap.set("v", "<A-l>", "$") --jump to line end
+keymap.set("v", "<A-h>", "0")     --jump to line head
+keymap.set("v", "<A-l>", "$")     --jump to line end
 
 keymap.set("v", "<leader>b", "%") -- match brackest
 
@@ -18,16 +18,16 @@ keymap.set("v", "<leader>b", "%") -- match brackest
 keymap.set("n", "<leader>vv", "<C-w>v") -- 水平新增窗口
 keymap.set("n", "<leader>vh", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", "<leader>vc", "<C-w>c") -- close window
-keymap.set("n", "<C-S-j>", "<C-w>+") -- left top / right bottom reverse
+keymap.set("n", "<C-S-j>", "<C-w>+")    -- left top / right bottom reverse
 keymap.set("n", "<C-S-k>", "<C-w>-")
 keymap.set("n", "<C-S-h>", "<C-w><")
 keymap.set("n", "<C-S-l>", "<C-w>>")
 
-keymap.set("n", "<A-h>", "0") --jump to line head
-keymap.set("n", "<A-l>", "$") --jump to line end
+keymap.set("n", "<A-h>", "0")     --jump to line head
+keymap.set("n", "<A-l>", "$")     --jump to line end
 
-keymap.set("n", "dH", "d^") -- delete form cursor to line head
-keymap.set("n", "dL", "d$") -- delete form cursor to line end
+keymap.set("n", "dH", "d^")       -- delete form cursor to line head
+keymap.set("n", "dL", "d$")       -- delete form cursor to line end
 
 keymap.set("n", "<leader>b", "%") -- match brackest
 
@@ -50,8 +50,10 @@ keymap.set({ "c", "i" }, "<C-v>", "<C-r>+")
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- formater
-keymap.set("n", "<leader>fa", ":Format<CR>")
-keymap.set("n", "<leader>fw", ":FormatWrite<CR>")
+keymap.set("n", "<leader>fa", function()
+  vim.lsp.buf.format { async = true }
+end, { desc = "Format code" })
+-- keymap.set("n", "<leader>fw", ":FormatWrite<CR>")
 
 -- lazygit
 keymap.set("n", "<leader>lg", ":LazyGit<CR>")

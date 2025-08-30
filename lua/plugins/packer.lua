@@ -68,8 +68,6 @@ return require("packer").startup(function(use)
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
-  use("mhartington/formatter.nvim") --formatter
-
   use("gen740/smoothcursor.nvim")
 
   use({
