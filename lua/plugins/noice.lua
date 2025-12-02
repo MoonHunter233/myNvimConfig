@@ -40,4 +40,12 @@ require("noice").setup({
       enabled = true, -- 显示函数签名
     },
   },
+  views = {
+    cmdline_popup = {
+      position = {
+        row = "96%",
+        col = "1"
+      }
+    }
+  }
 })
