@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 local keymap = vim.keymap
 -- ---------- 插入模式 ---------- ---
-keymap.set("i", "jk", "<ESC>")
+-- keymap.set("i", "jk", "<ESC>")
 
 -- ---------- 视觉模式 ---------- ---
 -- 单行或多行移动
@@ -76,7 +76,7 @@ keymap.set("n", "<leader>lk", ":Leet console<CR>")
 -- markdown
 keymap.set("n", "<leader>md", ":RenderMarkdown<CR>")
 keymap.set("n", "<leader>mD", ":RenderMarkdown disable<CR>")
-
+keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>")
 -- toggleterm
 keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>")
 keymap.set("n", "<leader>tr", ":ToggleTerm direction=vertical<CR>")

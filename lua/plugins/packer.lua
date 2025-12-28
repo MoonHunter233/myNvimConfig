@@ -105,6 +105,17 @@ return require("packer").startup(function(use)
   use("tadmccorkle/markdown.nvim") -- markdown hotkey
 
   use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", 
+    run = "cd app && npm install", 
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, 
+    ft = { "markdown" }, 
+  })
+
+  use({
     "MeanderingProgrammer/render-markdown.nvim",
     after = { "nvim-treesitter" },
     requires = { "echasnovski/mini.nvim", opt = true }, -- if you use the mini.nvim suite
