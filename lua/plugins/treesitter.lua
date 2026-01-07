@@ -20,6 +20,7 @@ require("nvim-treesitter.configs").setup({
     "yaml",
     "toml",
     "editorconfig",
+    "cmake",
   }, -- one of "all" or a list of languages
   -- ensure_installed = "all",
   highlight = { enable = true },

@@ -9,6 +9,8 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
+  -- 自动启动
+  automatic_enable = false,
   -- 确保安装，根据需要填写
   ensure_installed = {
     "lua_ls",
@@ -16,6 +18,7 @@ require("mason-lspconfig").setup({
     -- "jbtls",
     "rust_analyzer",
     "cmake",
+    "clangd",
   },
 })
 
@@ -44,4 +47,8 @@ lspconfig.rust_analyzer.setup({
 
 lspconfig.cmake.setup({
   capabilities = capabilities,
+})
+
+lspconfig.qmlls.setup({
+    capabilities = capabilities,
 })

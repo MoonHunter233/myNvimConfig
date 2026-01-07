@@ -6,7 +6,7 @@ opt.number = true
 
 -- 缩进
 opt.tabstop = 4
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
@@ -20,7 +20,7 @@ opt.linebreak = true
 opt.cursorline = true
 
 -- 启用鼠标
-opt.mouse = "n"
+-- opt.mouse = "n"
 
 -- 系统剪贴板
 opt.clipboard:append("unnamedplus")
@@ -43,3 +43,11 @@ opt.redrawtime = 500
 opt.termguicolors = true
 opt.signcolumn = "yes"
 vim.cmd([[colorscheme tokyonight-night]])
+
+-- 语法错误提示
+vim.diagnostic.config({ virtual_text = true })
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--   callback = function()
+--     vim.diagnostic.open_float(nil, { focus = false })
+--   end,
+-- })

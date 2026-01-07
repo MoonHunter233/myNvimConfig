@@ -37,7 +37,9 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 -- 切换buffer
 keymap.set("n", "<S-L>", ":bnext<CR>")
 keymap.set("n", "<S-H>", ":bprevious<CR>")
-keymap.set("n", "<S-W>", ":bdelete<CR>")
+keymap.set("n", "<S-W>", function()
+  require("mini.bufremove").delete(0, false)
+end, { desc = "Delete buffer safely" })
 
 keymap.set("n", "<leader>kt", ":!kitty --directory=$(pwd) &<CR> | <CR>")
 
