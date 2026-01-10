@@ -28,5 +28,6 @@ require("plugins.noice")
 require("plugins.leetcode")
 require("plugins.toggleterm")
 require("plugins.dap")
+require("plugins.format")
 
 _G.browser = "firefox"

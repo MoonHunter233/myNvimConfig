@@ -31,10 +31,10 @@ vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, { noremap = true,
 
 -- 查看引用
 vim.keymap.set("n", "<leader>gr", function()
-  builtin.lsp_references({
-    -- prompt_title = "LSP References", -- 可选，设置标题
-    initial_mode = "normal", -- 进入 normal 模式
-  })
+	builtin.lsp_references({
+		-- prompt_title = "LSP References", -- 可选，设置标题
+		initial_mode = "normal", -- 进入 normal 模式
+	})
 end, { noremap = true, silent = true })
 
 -- 跳转到实现

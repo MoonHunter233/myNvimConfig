@@ -22,6 +22,15 @@ vim.cmd([[
   augroup end
 ]])
 
+-- 更新使用浮动窗口
+require('packer').init {
+  display = {
+    open_fn = function()
+      return require('packer.util').float { border = 'rounded' }
+    end,
+  },
+}
+
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use("folke/tokyonight.nvim") -- 主题
@@ -55,6 +64,7 @@ return require("packer").startup(function(use)
   use("rafamadriz/friendly-snippets")
   use("hrsh7th/cmp-path") -- 文件路径
   use("hrsh7th/cmp-buffer")
+  use("stevearc/conform.nvim")
 
   use("numToStr/Comment.nvim") -- gcc和gc注释
   use("windwp/nvim-autopairs") -- 自动补全括号
@@ -97,7 +107,6 @@ return require("packer").startup(function(use)
   use({
     "mfussenegger/nvim-dap", -- dap调试
     "rcarriga/nvim-dap-ui",
-    "theHamsta/nvim-dap-virtual-text",
     "nvim-neotest/nvim-nio",
     "theHamsta/nvim-dap-virtual-text",
   })
@@ -111,11 +120,6 @@ return require("packer").startup(function(use)
   use("kawre/leetcode.nvim") -- leetcode
 
   use("tadmccorkle/markdown.nvim") -- markdown hotkey
-
-  use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-  })
 
   use({ "iamcco/markdown-preview.nvim", 
     run = "cd app && npm install", 

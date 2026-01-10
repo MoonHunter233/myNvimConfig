@@ -53,8 +53,11 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- formater
 keymap.set("n", "<leader>fa", function()
-  vim.lsp.buf.format { async = true }
+  require("conform").format({ async = true })
 end, { desc = "Format code" })
+-- keymap.set("n", "<leader>fa", function()
+--   vim.lsp.buf.format { async = true }
+-- end, { desc = "Format code" })
 -- keymap.set("n", "<leader>fw", ":FormatWrite<CR>")
 
 -- lazygit
