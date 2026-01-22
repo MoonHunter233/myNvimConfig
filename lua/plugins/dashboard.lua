@@ -72,7 +72,7 @@ dashboard.setup({
 				desc = "Find All File           ",
 				desc_hl = "String",
 				key = "ff",
-				keymap = "SPC f f",
+				keymap = "SPC ff",
 				key_hl = "Number",
 				key_format = " %s", -- remove default surrounding `[]`
 				action = builtin.find_files,
@@ -83,7 +83,7 @@ dashboard.setup({
 				desc = "Find Recent File           ",
 				desc_hl = "String",
 				key = "fr",
-				keymap = "SPC f r",
+				keymap = "SPC fr",
 				key_hl = "Number",
 				key_format = " %s", -- remove default surrounding `[]`
 				action = builtin.live_grep,
@@ -94,8 +94,8 @@ dashboard.setup({
 				icon_hl = "Title",
 				desc = "File Manager",
 				desc_hl = "String",
-				key = "yz",
-				keymap = "SPC r a",
+				key = "ra",
+				keymap = "SPC ra",
 				key_hl = "Number",
 				key_format = " %s", -- remove default surrounding `[]`
 				action = function()
