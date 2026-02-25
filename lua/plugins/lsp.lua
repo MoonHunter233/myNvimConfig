@@ -17,8 +17,8 @@ require("mason-lspconfig").setup({
 		-- "stylu",
 		-- "jbtls",
 		"rust_analyzer",
-		"cmake",
-		"clangd",
+		-- "cmake",
+		-- "clangd",
 	},
 })
 
@@ -33,9 +33,7 @@ lspconfig.jdtls.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.clangd.setup({
-	capabilities = capabilities,
-})
+lspconfig.clangd.setup({})
 
 lspconfig.ast_grep.setup({
 	capabilities = capabilities,
@@ -45,9 +43,7 @@ lspconfig.rust_analyzer.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.cmake.setup({
-	capabilities = capabilities,
-})
+lspconfig.cmake.setup({})
 
 lspconfig.qmlls.setup({
 	capabilities = capabilities,
