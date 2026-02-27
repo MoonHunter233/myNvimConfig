@@ -82,7 +82,6 @@ return require("packer").startup(function(use)
 
   use({
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8", --文件检索
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
@@ -137,7 +136,6 @@ return require("packer").startup(function(use)
 
   use({
     "akinsho/toggleterm.nvim", -- float terminal
-    tag = "*",
   })
 
   -- use("Pocco81/auto-save.nvim")
