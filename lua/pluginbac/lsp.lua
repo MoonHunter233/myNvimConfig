@@ -33,7 +33,9 @@ lspconfig.jdtls.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.clangd.setup({})
+lspconfig.clangd.setup({
+	capabilities = capabilities,
+})
 
 lspconfig.ast_grep.setup({
 	capabilities = capabilities,
@@ -43,7 +45,10 @@ lspconfig.rust_analyzer.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.cmake.setup({})
+lspconfig.neocmake.setup({
+	capabilities = capabilities,
+    cmd = { "neocmakelsp", "stdio" },
+})
 
 lspconfig.qmlls.setup({
 	capabilities = capabilities,

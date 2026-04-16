@@ -8,3 +8,4 @@
 
 # 忽略 Packer 插件缓存
 packer_compiled.lua
+*.json
