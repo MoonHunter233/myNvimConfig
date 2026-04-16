@@ -1,5 +1,3 @@
--- require("fontStyle")
---
 -- -- 插件
 -- require("plugins.lualine")
 -- require("plugins.nvim-tree")
@@ -26,6 +24,7 @@ _G.browser = "firefox"
 require("config.lazy")
 require("config.options")
 require("config.keymaps")
+require("fontStyle")
 
 require("tool")
 

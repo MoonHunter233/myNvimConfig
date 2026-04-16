@@ -1,7 +1,5 @@
 local dashboard = require("dashboard")
 
-local icons = require("plugins.icons")
-
 local builtin = require("telescope.builtin")
 local Yazi = require("tool.Yazi").Yazi
 
