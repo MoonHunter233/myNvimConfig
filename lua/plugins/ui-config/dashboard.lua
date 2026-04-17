@@ -116,4 +116,38 @@ return function()
 			footer = "Happy coding with Neovim!",
 		},
 	})
+
+	-- return dashboard
+	local opening_dashboard = false
+
+	vim.api.nvim_create_autocmd("BufEnter", {
+		callback = function()
+			-- 如果正在打开 dashboard，直接跳过（关键）
+			if opening_dashboard then
+				return
+			end
+
+			local buf = vim.api.nvim_get_current_buf()
+
+			-- 如果已经是 dashboard，本身不处理
+			if vim.bo[buf].filetype == "dashboard" then
+				return
+			end
+
+			-- 判断 [No Name]
+			if vim.api.nvim_buf_get_name(buf) == "" and not vim.bo[buf].modified and vim.bo[buf].buftype == "" then
+				opening_dashboard = true
+
+				vim.schedule(function()
+					-- 打开 dashboard
+					vim.cmd("Dashboard")
+
+					-- 下一次事件循环再解锁（非常关键）
+					vim.schedule(function()
+						opening_dashboard = false
+					end)
+				end)
+			end
+		end,
+	})
 end

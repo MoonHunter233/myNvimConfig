@@ -36,8 +36,7 @@ return {
 	-- bufferline（顶部 buffer 栏）
 	{
 		"akinsho/bufferline.nvim",
-		event = "VeryLazy",
-
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},

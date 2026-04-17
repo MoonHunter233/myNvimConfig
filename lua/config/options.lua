@@ -51,3 +51,6 @@ vim.diagnostic.config({ virtual_text = true })
 --     vim.diagnostic.open_float(nil, { focus = false })
 --   end,
 -- })
+
+-- show tabline forever. when open file from dashboard, bufferline will be show
+vim.opt.showtabline = 2
