@@ -54,3 +54,7 @@ vim.diagnostic.config({ virtual_text = true })
 
 -- show tabline forever. when open file from dashboard, bufferline will be show
 vim.opt.showtabline = 2
+
+-- 默认不开启nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
