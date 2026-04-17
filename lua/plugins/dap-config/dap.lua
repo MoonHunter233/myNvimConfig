@@ -28,6 +28,7 @@ return function()
 	})
 
 	-- cpp
+	local last_args = {} -- contain args
 	dap.configurations.cpp = {
 		{
 			name = "Launch File",
@@ -38,7 +39,11 @@ return function()
 			end,
 			cwd = "${workspaceFolder}", -- 工作目录
 			stopOnEntry = false,
-			args = {}, -- 可选参数
+			args = function()
+				local input = vim.fn.input("Args: ", table.concat(last_args, " "))
+				last_args = vim.split(input, " ")
+				return last_args
+			end,
 		},
 	}
 
@@ -46,17 +51,24 @@ return function()
 	dap.configurations.c = dap.configurations.cpp
 	dap.configurations.rust = dap.configurations.cpp
 
-	vim.keymap.set("n", "<F5>", dap.continue) -- 开始/继续调试
-	vim.keymap.set("n", "<F10>", dap.step_over) -- 单步跳过
-	vim.keymap.set("n", "<F11>", dap.step_into) -- 单步进入
-	vim.keymap.set("n", "<F12>", dap.step_out) -- 单步返回
-	vim.keymap.set("n", "<leader>dd", dap.toggle_breakpoint) -- 设置/取消断点
-	vim.keymap.set("n", "<leader>DD", function()
+	local keymap = vim.keymap
+	keymap.set("n", "<F12>", dap.continue) -- 开始/继续调试
+	keymap.set("n", "<F2>", dap.step_over) -- 单步跳过
+	keymap.set("n", "<F3>", dap.step_into) -- 单步进入
+	keymap.set("n", "<F4>", dap.step_out) -- 单步返回
+	keymap.set("n", "<F5>", function() -- close dap
+		local dapui = require("dapui")
+		dap.terminate() -- 终止调试进程
+		dap.close() -- 关闭 dap session
+		dapui.close() -- 关闭 UI
+	end, { desc = "Quit DAP" })
+	keymap.set("n", "<leader>dd", dap.toggle_breakpoint) -- 设置/取消断点
+	keymap.set("n", "<leader>DD", function()
 		dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) -- 设置条件断点
 	end)
-	vim.keymap.set("n", "<Leader>lp", function()
+	keymap.set("n", "<Leader>dp", function()
 		dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) -- 日志断点
 	end)
-	vim.keymap.set("n", "<Leader>dr", dap.repl.open) -- 打开 REPL 窗口
-	vim.keymap.set("n", "<Leader>dl", dap.run_last) -- 运行最后的调试配置
+	keymap.set("n", "<Leader>dr", dap.repl.open) -- 打开 REPL 窗口
+	keymap.set("n", "<Leader>dl", dap.run_last) -- 运行最后的调试配置
 end
