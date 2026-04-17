@@ -1,50 +1,23 @@
-require("mason").setup({
-	ui = {
-		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
+return {
+	{
+		"williamboman/mason.nvim",
+        lazy = false,
+		config = require("plugins.lsp-config.mason"),
+	},
+
+	{
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = { "williamboman/mason.nvim" },
+		config = require("plugins.lsp-config.mason-lsp"),
+	},
+
+	{
+		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 		},
+		config = require("plugins.lsp-config.lsp"),
 	},
-})
-
-require("mason-lspconfig").setup({
-	-- 自动启动
-	automatic_enable = false,
-	-- 确保安装，根据需要填写
-	ensure_installed = {
-		"lua_ls",
-		-- "stylu",
-		-- "jbtls",
-		"rust_analyzer",
-		-- "cmake",
-		-- "clangd",
-	},
-})
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lspconfig = require("lspconfig")
-
-lspconfig.lua_ls.setup({
-	capabilities = capabilities,
-})
-
-lspconfig.jdtls.setup({
-	capabilities = capabilities,
-})
-
-lspconfig.clangd.setup({})
-
-lspconfig.ast_grep.setup({
-	capabilities = capabilities,
-})
-
-lspconfig.rust_analyzer.setup({
-	capabilities = capabilities,
-})
-
-lspconfig.cmake.setup({})
-
-lspconfig.qmlls.setup({
-	capabilities = capabilities,
-})
+}
