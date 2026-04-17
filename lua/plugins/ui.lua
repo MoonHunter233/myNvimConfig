@@ -8,11 +8,9 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy", -- 延迟加载（推荐）
-
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-
 		config = require("plugins.ui-config.lualine"),
 	},
 
@@ -20,12 +18,10 @@ return {
 	{
 		"nvim-tree/nvim-tree.lua",
 		cmd = "NvimTreeToggle", -- 只有用命令才加载
-
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-
-		opts = {},
+		config = require("plugins.ui-config.nvim-tree"),
 	},
 
 	-- tmux 窗口导航
@@ -65,5 +61,10 @@ return {
 		"gen740/smoothcursor.nvim",
 		event = "VeryLazy",
 		config = require("plugins.ui-config.smooth-cursor"),
+	},
+
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = require("plugins.ui-config.web-devicons"),
 	},
 }
