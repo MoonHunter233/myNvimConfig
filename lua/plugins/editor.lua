@@ -3,7 +3,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile" },
 		config = require("plugins.editor-config.treesitter"),
 	},
 
@@ -21,12 +21,19 @@ return {
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		config = require("plugins.editor-config.telescope"),
 	},
 
 	-- lazygit
 	{
 		"kdheepak/lazygit.nvim",
-		cmd = "LazyGit",
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
@@ -60,13 +67,20 @@ return {
 	-- format
 	{
 		"stevearc/conform.nvim",
-		event = "BufWritePre",
+		event = { "BufReadPre", "BufNewFile" },
 		config = require("plugins.editor-config.format"),
 	},
 
 	-- markdown
-	{ "tadmccorkle/markdown.nvim", ft = "markdown" },
-
+	{
+		"tadmccorkle/markdown.nvim",
+		ft = "markdown",
+		dependencies = {
+			"iamcco/markdown-preview.nvim",
+			"MeanderingProgrammer/render-markdown.nvim",
+		},
+        config = require("plugins.editor-config.markdown"),
+	},
 	{
 		"iamcco/markdown-preview.nvim",
 		ft = "markdown",
@@ -75,7 +89,6 @@ return {
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 	},
-
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		ft = "markdown",
@@ -85,6 +98,7 @@ return {
 	-- misc
 	{
 		"kawre/leetcode.nvim",
-        config = require("plugins.editor-config.leetcode")
+		cmd = "Leet",
+		config = require("plugins.editor-config.leetcode"),
 	},
 }

@@ -23,7 +23,7 @@ keymap.set("n", "<C-S-k>", "<C-w>-")
 keymap.set("n", "<C-S-h>", "<C-w><")
 keymap.set("n", "<C-S-l>", "<C-w>>")
 
-keymap.set("n", "<A-h>", "0")     --jump to line head
+keymap.set("n", "<A-h>", "^")     --jump to line head
 keymap.set("n", "<A-l>", "$")     --jump to line end
 
 keymap.set("n", "dH", "d^")       -- delete form cursor to line head
@@ -51,15 +51,6 @@ keymap.set({ "c", "i" }, "<C-v>", "<C-r>+")
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
--- formater
-keymap.set("n", "<leader>fa", function()
-  require("conform").format({ async = true })
-end, { desc = "Format code" })
--- keymap.set("n", "<leader>fa", function()
---   vim.lsp.buf.format { async = true }
--- end, { desc = "Format code" })
--- keymap.set("n", "<leader>fw", ":FormatWrite<CR>")
-
 -- lazygit
 keymap.set("n", "<leader>lg", ":LazyGit<CR>")
 
@@ -67,21 +58,6 @@ keymap.set("n", "<leader>lg", ":LazyGit<CR>")
 keymap.set("n", "<leader>fn", ":Telescope notify<CR>")
 keymap.set("n", "<leader>nn", ":Notifications<CR>")
 
--- leetcode
-keymap.set("n", "<leader>lr", ":Leet run<CR>")
-keymap.set("n", "<leader>lc", ":Leet submit<CR>")
-keymap.set("n", "<leader>lC", ":Leet last_submit<CR>")
-keymap.set("n", "<leader>ll", ":Leet lang<CR>")
-keymap.set("n", "<leader>li", ":Leet info<CR>")
-keymap.set("n", "<leader>lo", ":Leet open<CR>")
-keymap.set("n", "<leader>lt", ":Leet tabs<CR>")
-keymap.set("n", "<leader>lT", ":Leet list<CR>")
-keymap.set("n", "<leader>lk", ":Leet console<CR>")
-
--- markdown
-keymap.set("n", "<leader>md", ":RenderMarkdown<CR>")
-keymap.set("n", "<leader>mD", ":RenderMarkdown disable<CR>")
-keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>")
 -- toggleterm
 keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>")
 keymap.set("n", "<leader>tr", ":ToggleTerm direction=vertical<CR>")

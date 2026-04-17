@@ -117,4 +117,16 @@ return function()
 		---@type boolean
 		image_support = false,
 	})
+
+    -- keymaps
+    local keymap = vim.keymap
+	keymap.set("n", "<leader>lr", ":Leet run<CR>")
+	keymap.set("n", "<leader>lc", ":Leet submit<CR>")
+	keymap.set("n", "<leader>lC", ":Leet last_submit<CR>")
+	keymap.set("n", "<leader>ll", ":Leet lang<CR>")
+	keymap.set("n", "<leader>li", ":Leet info<CR>")
+	keymap.set("n", "<leader>lo", ":Leet open<CR>")
+	keymap.set("n", "<leader>lt", ":Leet tabs<CR>")
+	keymap.set("n", "<leader>lT", ":Leet list<CR>")
+	keymap.set("n", "<leader>lk", ":Leet console<CR>")
 end
