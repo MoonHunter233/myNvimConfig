@@ -1,33 +1,22 @@
 return function()
-	local capabilities = require("cmp_nvim_lsp").default_capabilities()
-	local lspconfig = require("lspconfig")
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-	lspconfig.lua_ls.setup({
-		capabilities = capabilities,
-	})
+  local servers = {
+    lua_ls = {},
+    jdtls = {},
+    clangd = {},
+    ast_grep = {},
+    rust_analyzer = {},
+    qmlls = {},
+    neocmake = {
+      cmd = { "neocmakelsp", "stdio" },
+    },
+  }
 
-	lspconfig.jdtls.setup({
-		capabilities = capabilities,
-	})
+  for name, config in pairs(servers) do
+    config.capabilities = capabilities
 
-	lspconfig.clangd.setup({
-		capabilities = capabilities,
-	})
-
-	lspconfig.ast_grep.setup({
-		capabilities = capabilities,
-	})
-
-	lspconfig.rust_analyzer.setup({
-		capabilities = capabilities,
-	})
-
-	lspconfig.neocmake.setup({
-		capabilities = capabilities,
-		cmd = { "neocmakelsp", "stdio" },
-	})
-
-	lspconfig.qmlls.setup({
-		capabilities = capabilities,
-	})
+    vim.lsp.config(name, config)
+    vim.lsp.enable(name)
+  end
 end
