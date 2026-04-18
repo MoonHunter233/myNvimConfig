@@ -133,6 +133,15 @@ return function()
 			if vim.bo[buf].filetype == "dashboard" then
 				return
 			end
+			-- 跳过特殊窗口（关键）
+			if vim.fn.getcmdwintype() ~= "" then
+				return
+			end
+
+			-- 跳过特殊 buffer
+			if vim.bo.buftype ~= "" then
+				return
+			end
 
 			-- 判断 [No Name]
 			if vim.api.nvim_buf_get_name(buf) == "" and not vim.bo[buf].modified and vim.bo[buf].buftype == "" then
