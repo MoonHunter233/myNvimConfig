@@ -5,7 +5,7 @@ return function()
 	local Yazi = require("tool.Yazi").Yazi
 
 	local notify = require("notify")
-	notify("Neovim Start", "info", { title = "welcome", timeout = 500 })
+	notify("Arknights", "info", { title = "welcome", timeout = 500 })
 
 	dashboard.setup({
 		-- 设置主题
