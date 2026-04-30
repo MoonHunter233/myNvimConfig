@@ -27,4 +27,7 @@ return function()
 			separator_style = "slant", -- 分隔符样式
 		},
 	})
+    local keymap = vim.keymap
+    keymap.set("n", "<A-S-H>", ":BufferLineMovePrev<CR>")
+    keymap.set("n", "<A-S-L>", ":BufferLineMoveNext<CR>")
 end
